@@ -6,7 +6,7 @@ export const defaultLocale = 'en'
 //     content are plain modern Russian.)
 //   - 'uk': "Ukrainian" — modern standard Ukrainian.
 //   - 'fr': "French" — modern standard French.
-export const locales = ['en', 'free-ru', 'uk', 'fr'] as const
+export const locales = ['en', 'free-ru', 'uk', 'fr', 'br'] as const
 export type Locale = typeof locales[number]
 
 // Built-in interface languages shown in the language switcher, in display order.
@@ -23,6 +23,7 @@ export const naturalLocales: NaturalLocale[] = [
   { code: 'free-ru', labelKey: 'freeRussian' },
   { code: 'uk', labelKey: 'ukrainian' },
   { code: 'fr', labelKey: 'french' },
+  { code: 'br', labelKey: 'breton' },
 ]
 
 // Cookie name for storing locale preference
@@ -37,6 +38,7 @@ export function getIntlLocale(locale: string): string {
   if (locale === 'free-ru') return 'ru'
   if (locale === 'uk') return 'uk'
   if (locale === 'fr') return 'fr'
+  if (locale === 'br') return 'br'
   return 'en'
 }
 
